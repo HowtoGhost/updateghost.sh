@@ -10,14 +10,16 @@ fi
 
 #Make Tempory Directory and Download Lates Ghost
 mkdir temp
-wget -d temp https://github.com/TryGhost/Ghost/releases/download/0.4.0-pre/Ghost-0.4.0-pre.zip
-unzip Ghost-0.4.0-pre.zip
+cd temp
+wget https://github.com/TryGhost/Ghost/releases/download/0.4.0-pre/Ghost-0.4.0-pre.zip
+unzip *.zip
+cd ..
 
 #Copy the new files over
-cp temp/*.md temp/*.js temp/*.json .
+yes | cp temp/*.md temp/*.js temp/*.json .
 rm -R core
-cp -R temp/core .
-cp -R temp/content/themes/casper content/themes
+yes | cp -R temp/core .
+yes | cp -R temp/content/themes/casper content/themes
 npm install --production
 
 #Delete temp folder
