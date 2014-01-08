@@ -20,4 +20,7 @@ cp -R temp/core .
 cp -R temp/content/themes/casper content/themes
 npm install --production
 
+#Delete temp folder
+rm -R temp
+
 echo "You can now start ghost with npm, forever or whatever else you use"
