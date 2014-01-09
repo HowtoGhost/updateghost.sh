@@ -15,6 +15,9 @@ wget https://github.com/TryGhost/Ghost/releases/download/0.4.0-pre/Ghost-0.4.0-p
 unzip *.zip
 cd ..
 
+#Make Backup DB
+cp /content/data/ghost.db /content/data/ghost_backup.db
+
 #Copy the new files over
 yes | cp temp/*.md temp/*.js temp/*.json .
 rm -R core
