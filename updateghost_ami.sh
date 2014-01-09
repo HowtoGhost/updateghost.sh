@@ -7,6 +7,9 @@ if [[ `whoami` != root ]]; then
     exit 1
 fi
 
+#Stop Ghost
+forever stopall
+
 #Make Tempory Directory and Download Lates Ghost
 cd /var/www/ghost
 mkdir temp
@@ -16,7 +19,7 @@ unzip *.zip
 cd ..
 
 #Make Backup DB
-cp /content/data/ghost.db /content/data/ghost_backup.db
+cp content/data/ghost.db content/data/ghost_backup.db
 
 #Copy the new files over
 yes | cp temp/*.md temp/*.js temp/*.json .

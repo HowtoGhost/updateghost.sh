@@ -16,7 +16,7 @@ unzip *.zip
 cd ..
 
 #Make Backup DB
-cp /content/data/ghost.db /content/data/ghost_backup.db
+cp content/data/ghost.db content/data/ghost_backup.db
 
 #Copy the new files over
 yes | cp temp/*.md temp/*.js temp/*.json .
