@@ -31,3 +31,12 @@ npm install --production
 #Delete temp folder
 rm -R temp
 
+#Install and use pm2
+npm install -g pm2
+echo "export NODE_ENV=production" >> ~/.profile
+pm2 start index.js --name ghost
+pm2 startup
+
+#Delete Old Forever Script and Cron
+crontab -r
+rm /usr/local/scripts/ghoststart.sh
