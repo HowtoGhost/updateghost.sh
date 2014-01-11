@@ -32,10 +32,10 @@ npm install --production
 rm -R temp
 
 #Install and use pm2
-npm install -g pm2
+npm install git://github.com/Unitech/pm2.git -g
 echo "export NODE_ENV=production" >> ~/.profile
 pm2 start index.js --name ghost
-pm2 startup
+pm2 startup centos
 
 #Delete Old Forever Script and Cron
 crontab -r
