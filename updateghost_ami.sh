@@ -39,9 +39,8 @@ echo "###### Git Installed ######"
 npm install git://github.com/Unitech/pm2.git -g
 echo "###### pm2 Installed ######"
 
-echo "export NODE_ENV=production" >> ~/.profile
-pm2 start index.js --name ghost
-pm2 startup centos -u ec2-user
+NODE_ENV=production pm2 start index.js --name ghost
+NODE_ENV=production pm2 startup centos
 echo "###### pm2 Startup Started ######"
 
 #Delete Old Forever Script and Cron
