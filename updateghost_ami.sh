@@ -28,9 +28,11 @@ rm -R core
 yes | cp -R temp/core .
 yes | cp -R temp/content/themes/casper content/themes
 npm install --production
+echo "###### NPM Installed ######"
 
 #Delete temp folder
 rm -R temp
 
 #Start Ghost Again
 sh /usr/local/scripts/ghoststart.sh
+echo "###### Ghost Started ######"
