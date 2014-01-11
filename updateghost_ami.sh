@@ -14,7 +14,7 @@ forever stopall
 cd /var/www/ghost
 mkdir temp
 cd temp
-wget https://github.com/TryGhost/Ghost/releases/download/0.4.0-pre/Ghost-0.4.0-pre.zip
+wget https://github.com/TryGhost/Ghost/releases/download/0.4.0-pre2/Ghost-0.4.0-pre2.zip
 unzip *.zip
 cd ..
 
