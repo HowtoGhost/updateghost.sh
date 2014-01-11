@@ -41,10 +41,10 @@ echo "###### pm2 Installed ######"
 
 echo "export NODE_ENV=production" >> ~/.profile
 pm2 start index.js --name ghost
-pm2 startup centos
+pm2 startup centos -u ec2-user
 echo "###### pm2 Startup Started ######"
 
 #Delete Old Forever Script and Cron
 crontab -r
 rm /usr/local/scripts/ghoststart.sh
-rm /etc/init.d/ghostscript.sh
+rm /etc/init.d/ghoststart.sh
