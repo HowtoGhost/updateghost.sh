@@ -33,4 +33,4 @@ npm install --production
 rm -R temp
 
 #Start Ghost Again
-sh /usr/local/bin/ghoststart.sh
+sh /usr/local/scripts/ghoststart.sh
