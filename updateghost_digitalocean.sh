@@ -14,7 +14,7 @@ service ghost stop
 cd /var/www/ghost
 mkdir temp
 cd temp
-wget https://github.com/TryGhost/Ghost/releases/download/0.4.0-pre2/Ghost-0.4.0-pre2.zip
+wget https://ghost.org/zip/ghost-latest.zip
 unzip *.zip
 cd ..
 

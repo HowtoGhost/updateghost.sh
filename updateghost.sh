@@ -11,7 +11,7 @@ fi
 #Make Tempory Directory and Download Lates Ghost
 mkdir temp
 cd temp
-wget https://github.com/TryGhost/Ghost/releases/download/0.4.0-pre/Ghost-0.4.0-pre.zip
+wget https://ghost.org/zip/ghost-latest.zip
 unzip *.zip
 cd ..
 
