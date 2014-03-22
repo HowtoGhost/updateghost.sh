@@ -11,7 +11,7 @@ fi
 #Make Tempory Directory and Download Lates Ghost
 mkdir temp
 cd temp
-wget https://ghost.org/zip/ghost-latest.zip
+curl -L -O https://ghost.org/zip/ghost-latest.zip 
 unzip *.zip
 cd ..
 
