@@ -32,6 +32,7 @@ echo "###### NPM Installed ######"
 
 #Delete temp folder
 rm -R temp
+chown -R ghost:ghost /var/www/ghost/
 
 #Start Ghost Again
 pm2 start index.js --name ghost
