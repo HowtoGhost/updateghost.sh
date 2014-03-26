@@ -10,6 +10,12 @@ fi
 #Stop Ghost
 service ghost stop
 
+#Add Git
+apt-get update
+apt-get upgrade -y
+apt-get install -y git
+echo "###### Git Installed ######"
+
 #Make Tempory Directory and Download Lates Ghost
 cd /var/www/ghost
 mkdir temp
