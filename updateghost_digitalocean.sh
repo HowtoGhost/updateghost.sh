@@ -32,7 +32,8 @@ echo "###### Data Backed Up ######"
 yes | cp temp/*.md temp/*.js temp/*.json .
 rm -R core
 yes | cp -R temp/core .
-yes | cp -R temp/content/themes/casper content/themes
+rm -R content/themes/casper
+yes | cp -R temp/content/themes/casper content/themes/.
 npm install --production
 echo "###### NPM Installed ######"
 
