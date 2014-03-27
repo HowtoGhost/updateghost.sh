@@ -7,9 +7,6 @@ if [[ `whoami` != root ]]; then
     exit 1
 fi
 
-#Stop Ghost
-service ghost stop
-
 #Add Git
 apt-get update
 apt-get upgrade -y
@@ -23,6 +20,9 @@ cd temp
 wget https://ghost.org/zip/ghost-latest.zip
 unzip *.zip
 cd ..
+
+#Stop Ghost
+service ghost stop
 
 #Make Backup DB
 cp content/data/ghost.db content/data/ghost_backup.db
