@@ -7,17 +7,11 @@ if [[ `whoami` != root ]]; then
     exit 1
 fi
 
-#Add Git
-# apt-get update
-# apt-get upgrade -y
-# apt-get install -y git
-# echo "###### Git Installed ######"
-
 #Make Tempory Directory and Download Lates Ghost
 cd /var/www/ghost
 mkdir temp
 cd temp
-wget https://github.com/TryGhost/Ghost/releases/download/0.5.0-rc2/Ghost-0.5.0-rc2.zip
+wget https://ghost.org/zip/ghost-latest.zip
 unzip *.zip
 cd ..
 
