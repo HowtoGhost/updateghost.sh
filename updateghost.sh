@@ -11,7 +11,7 @@ echo `whoami`
 #Make Tempory Directory and Download Lates Ghost
 mkdir temp
 cd temp
-curl -L -O https://github.com/TryGhost/Ghost/releases/download/0.5.0-rc2/Ghost-0.5.0-rc2.zip 
+curl -L -O https://ghost.org/zip/ghost-latest.zip 
 unzip *.zip
 cd ..
 
