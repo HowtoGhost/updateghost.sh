@@ -1,5 +1,5 @@
 #!/bin/bash
-# Written by Andy Boutte and David Balderston of howtoinstallghost.com and allaboutghost.com
+# Written by Andy Boutte and David Balderston of howtoinstallghost.com, ghostforbeginners.com, allaboutghost.com
 # updateghost_digitalocean.sh will update your current Digital Ocean Ghost install to the latest version without you losing any content
 
 if [[ `whoami` != root ]]; then
@@ -8,16 +8,16 @@ if [[ `whoami` != root ]]; then
 fi
 
 #Add Git
-apt-get update
-apt-get upgrade -y
-apt-get install -y git
-echo "###### Git Installed ######"
+# apt-get update
+# apt-get upgrade -y
+# apt-get install -y git
+# echo "###### Git Installed ######"
 
 #Make Tempory Directory and Download Lates Ghost
 cd /var/www/ghost
 mkdir temp
 cd temp
-wget https://ghost.org/zip/ghost-latest.zip
+wget https://github.com/TryGhost/Ghost/releases/download/0.5.0-rc2/Ghost-0.5.0-rc2.zip
 unzip *.zip
 cd ..
 
@@ -33,6 +33,7 @@ yes | cp temp/*.md temp/*.js temp/*.json .
 rm -R core
 yes | cp -R temp/core .
 yes | cp -R temp/content/themes/casper content/themes
+chown -R ghost:ghost ./
 npm install --production
 echo "###### NPM Installed ######"
 
