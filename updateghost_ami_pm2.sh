@@ -14,7 +14,7 @@ pm2 stop all
 cd /var/www/ghost
 mkdir temp
 cd temp
-wget https://ghost.org/zip/ghost-latest.zip
+wget https://github.com/TryGhost/Ghost/releases/download/0.5.0-rc2/Ghost-0.5.0-rc2.zip
 unzip *.zip
 cd ..
 
@@ -35,5 +35,5 @@ rm -R temp
 chown -R ghost:ghost /var/www/ghost/
 
 #Start Ghost Again
-pm2 start index.js --name ghost
+pm2 --run-as-user ghost start index.js --name ghost
 echo "###### Ghost Started ######"
