@@ -14,7 +14,7 @@ pm2 stop all
 cd /var/www/ghost
 mkdir temp
 cd temp
-wget https://github.com/TryGhost/Ghost/releases/download/0.5.0-rc2/Ghost-0.5.0-rc2.zip
+wget https://ghost.org/zip/ghost-latest.zip
 unzip *.zip
 cd ..
 
