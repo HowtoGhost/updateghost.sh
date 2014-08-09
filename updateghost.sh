@@ -1,12 +1,7 @@
 #!/bin/bash
-# Written by Andy Boutte and David Balderston of howtoinstallghost.com and allaboutghost.com
+# Written by Andy Boutte and David Balderston of howtoinstallghost.com, ghostforbeginners.com and allaboutghost.com
 # updateghost.sh will update your current ghost install to the latest version without you losing any content
 
-#Check to make sure script is being run as root
-# if [[ `whoami` != root ]]; then
-#     echo "This script must be run as root"
-#     exit 1
-# fi
 if [ -f config.js ] 
 	then
 	echo `whoami`
