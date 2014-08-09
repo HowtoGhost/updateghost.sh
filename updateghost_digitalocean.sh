@@ -1,17 +1,11 @@
 #!/bin/bash
-# Written by Andy Boutte and David Balderston of howtoinstallghost.com and allaboutghost.com
+# Written by Andy Boutte and David Balderston of howtoinstallghost.com, ghostforbeginners.com, allaboutghost.com
 # updateghost_digitalocean.sh will update your current Digital Ocean Ghost install to the latest version without you losing any content
 
 if [[ `whoami` != root ]]; then
     echo "This script must be run as root"
     exit 1
 fi
-
-#Add Git
-apt-get update
-apt-get upgrade -y
-apt-get install -y git
-echo "###### Git Installed ######"
 
 #Make Tempory Directory and Download Lates Ghost
 cd /var/www/ghost
@@ -35,6 +29,8 @@ yes | cp -R temp/core .
 yes | cp -R temp/content/themes/casper content/themes
 npm install --production
 echo "###### NPM Installed ######"
+
+chown -R ghost:ghost ./
 
 #Delete temp folder
 rm -R temp

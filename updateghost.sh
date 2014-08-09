@@ -3,11 +3,11 @@
 # updateghost.sh will update your current ghost install to the latest version without you losing any content
 
 #Check to make sure script is being run as root
-if [[ `whoami` != root ]]; then
-    echo "This script must be run as root"
-    exit 1
-fi
-
+# if [[ `whoami` != root ]]; then
+#     echo "This script must be run as root"
+#     exit 1
+# fi
+echo `whoami`
 #Make Tempory Directory and Download Lates Ghost
 mkdir temp
 cd temp
