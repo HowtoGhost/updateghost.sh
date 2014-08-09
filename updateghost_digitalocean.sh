@@ -27,9 +27,10 @@ yes | cp temp/*.md temp/*.js temp/*.json .
 rm -R core
 yes | cp -R temp/core .
 yes | cp -R temp/content/themes/casper content/themes
-chown -R ghost:ghost ./
 npm install --production
 echo "###### NPM Installed ######"
+
+chown -R ghost:ghost ./
 
 #Delete temp folder
 rm -R temp
