@@ -2,7 +2,10 @@
 # Written by Andy Boutte and David Balderston of howtoinstallghost.com, ghostforbeginners.com and allaboutghost.com
 # updateghost_ami.sh will update your current Amazon ami ghost install to the latest version without you losing any content
 
-sudo -u ghost
+if [[ `whoami` != root ]]; then
+    echo "This script must be run as root"
+    exit 1
+fi
 
 #Stop Ghost
 pm2 stop all
@@ -29,7 +32,8 @@ echo "###### NPM Installed ######"
 
 #Delete temp folder
 rm -R temp
+chown -R ghost:ghost /var/www/ghost/
 
 #Start Ghost Again
-pm2 start index.js --name ghost
+sudo -u ghost pm2 start index.js --name ghost
 echo "###### Ghost Started ######"
