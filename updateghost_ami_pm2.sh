@@ -1,5 +1,5 @@
 #!/bin/bash
-# Written by Andy Boutte and David Balderston of howtoinstallghost.com and allaboutghost.com
+# Written by Andy Boutte and David Balderston of howtoinstallghost.com, ghostforbeginners.com and allaboutghost.com
 # updateghost_ami.sh will update your current Amazon ami ghost install to the latest version without you losing any content
 
 if [[ `whoami` != root ]]; then
@@ -35,5 +35,5 @@ rm -R temp
 chown -R ghost:ghost /var/www/ghost/
 
 #Start Ghost Again
-pm2 start index.js --name ghost
+sudo -u ghost pm2 start index.js --name ghost
 echo "###### Ghost Started ######"
