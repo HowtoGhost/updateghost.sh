@@ -3,14 +3,14 @@
 # updateghost_ami.sh will update your current Amazon ami ghost install to the latest version without you losing any content
 
 if [[ `whoami` != root ]]; then
-    echo "This script must be run as root"
-    exit 1
+	echo "This script must be run as root."
+	exit 1
 fi
 
-#Stop Ghost
+# Stop Ghost.
 forever stopall
 
-#Make Tempory Directory and Download Lates Ghost
+# Make temporary directory and download latest Ghost.
 cd /var/www/ghost
 mkdir temp
 cd temp
@@ -18,21 +18,23 @@ wget https://ghost.org/zip/ghost-latest.zip
 unzip *.zip
 cd ..
 
-#Make Backup DB
-cp content/data/ghost.db content/data/ghost_backup.db
-echo "###### Data Backed Up ######"
+# Make database backups.
+for file in content/data/*.db;
+	do cp "$file" "${file}-backup-`date +%Y%m%d`";
+done
+echo "###### Database backed up. ######"
 
-#Copy the new files over
+# Copy the new files over.
 yes | cp temp/*.md temp/*.js temp/*.json .
 rm -R core
 yes | cp -R temp/core .
 yes | cp -R temp/content/themes/casper content/themes
 npm install --production
-echo "###### NPM Installed ######"
+echo "###### NPM installed. ######"
 
-#Delete temp folder
+# Delete temp folder.
 rm -R temp
 
-#Start Ghost Again
+# Start Ghost again.
 sh /usr/local/scripts/ghoststart.sh
-echo "###### Ghost Started ######"
+echo "###### Ghost started. ######"
